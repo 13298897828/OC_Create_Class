@@ -1,26 +1,215 @@
-# Xcode
-#
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
+//
+//  main.m
+//  Lesson_8_13_类和对象
+//
+//  Created by lanou3g on 15/8/13.
+//  Copyright (c) 2015年 lanou3g. All rights reserved.
+//
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
-#
-#Pods/
+#import <Foundation/Foundation.h>
+#import "Person.h"
+#import "Car.h"
+#import "iPhone.h"
+#import "Computer.h"
+#import "kindOfPeople.h"
+#import "Building.h"
+#import "Money.h"
+#import "Duck.h"
+#import "Fish.h"
+#import "Teacher.h"
+#import "Person1.h"
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        //创建对象,alloc开辟空间,申请内存,init 初始化
+        //init person 给init 发消息初始化 实例变量
+        Person *person = [[Person alloc]init];
+        //通过指向符号 (->) 赋值 
+        person->_name = @"waHaHa";
+        //调用方法
+        [person eat:@"wahah" drinksome:@"water"]; //实例方法只能 对象 使用
+        [Person sayHi]; // 加号的类方法只能 类 使用
+        
+        Car *car =[[Car alloc]init];
+        [car run];
+        
+        iPhone *iphone = [[iPhone alloc]init];
+        [iphone call:125132];
+        iphone->_number = 12612;
+        [iphone sendMassage: iphone->_number];
+        iphone->_musicName = @"waHaHa";
+        [iphone listenMusic:iphone->_musicName];
+        iphone->_type = @"八星八箭土豪基金 1024G专业定制版 - 来自 迪拜 第一高楼, 正在想用茶叶蛋";
+        NSLog(@"我得手机是:%@",iphone->_type);
+        
+        
+        Computer *computer = [[Computer alloc]init];
+        computer->_type = @"苹果的";
+        computer->_size = 88.8;
+        [computer kindOfComputer:computer->_type size: computer->_size];
+        
+        
+        kindOfPeople *kind = [[kindOfPeople alloc]init];
+        kind->_kind =@"你瞎啊,这么黑看不出是哪的";
+        [kind  whatKindPeopleOfYou:kind->_kind];
+        
+        
+        Money *money = [[Money alloc]init];
+        money->_type = @"RMB";
+        [money whatKindOfMoney:money->_type];
+        
+        
+        Duck *duck = [[Duck alloc]init];
+        duck->_kindOfCook = @"we eat the  duck  fresh";
+        [duck  HowToEat:duck->_kindOfCook];
+        
+        
+        Fish *fish = [[Fish alloc]init];
+        fish->_kindOfFish = @"wawaFish";
+        [fish whatKindDoYouSell:fish->_kindOfFish];
+        
+        
+        Teacher *teacher = [[Teacher alloc]init];
+        int count = 2;
+        int i ;
+//        for ( i = 0; i < count; i ++) {
+//            // teacher->_name[i] = @"wahah";
+//            scanf("%s",teacher->_name[i]);
+        [teacher  whatKindOfTeacherDoNotYouLike:teacher->_name[i] size:count];
+            Person1 *p = [[Person1 alloc]init];
+            p->_food = @"meet";
+            [p eat:p->_food];
+        Person1 *pp = [[Person1 alloc]init];
+        [pp introduceSelf];
+        
+        
+      // }
+    }
+     
+    return 0;
+}
+
+
+
+
+//
+//  main.m
+//  Lesson_8_13_类和对象
+//
+//  Created by lanou3g on 15/8/13.
+//  Copyright (c) 2015年 lanou3g. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Person.h"
+#import "Car.h"
+#import "iPhone.h"
+#import "Computer.h"
+#import "kindOfPeople.h"
+#import "Building.h"
+#import "Money.h"
+#import "Duck.h"
+#import "Fish.h"
+#import "Teacher.h"
+#import "Person1.h"
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        //创建对象,alloc开辟空间,申请内存,init 初始化
+        //init person 给init 发消息初始化 实例变量
+        Person *person = [[Person alloc]init];
+        //通过指向符号 (->) 赋值 
+        person->_name = @"waHaHa";
+        //调用方法
+        [person eat:@"wahah" drinksome:@"water"]; //实例方法只能 对象 使用
+        [Person sayHi]; // 加号的类方法只能 类 使用
+        
+        Car *car =[[Car alloc]init];
+        [car run];
+        
+        iPhone *iphone = [[iPhone alloc]init];
+        [iphone call:125132];
+        iphone->_number = 12612;
+        [iphone sendMassage: iphone->_number];
+        iphone->_musicName = @"waHaHa";
+        [iphone listenMusic:iphone->_musicName];
+        iphone->_type = @"八星八箭土豪基金 1024G专业定制版 - 来自 迪拜 第一高楼, 正在想用茶叶蛋";
+        NSLog(@"我得手机是:%@",iphone->_type);
+        
+        
+        Computer *computer = [[Computer alloc]init];
+        computer->_type = @"苹果的";
+        computer->_size = 88.8;
+        [computer kindOfComputer:computer->_type size: computer->_size];
+        
+        
+        kindOfPeople *kind = [[kindOfPeople alloc]init];
+        kind->_kind =@"你瞎啊,这么黑看不出是哪的";
+        [kind  whatKindPeopleOfYou:kind->_kind];
+        
+        
+        Money *money = [[Money alloc]init];
+        money->_type = @"RMB";
+        [money whatKindOfMoney:money->_type];
+        
+        
+        Duck *duck = [[Duck alloc]init];
+        duck->_kindOfCook = @"we eat the  duck  fresh";
+        [duck  HowToEat:duck->_kindOfCook];
+        
+        
+        Fish *fish = [[Fish alloc]init];
+        fish->_kindOfFish = @"wawaFish";
+        [fish whatKindDoYouSell:fish->_kindOfFish];
+        
+        
+        Teacher *teacher = [[Teacher alloc]init];
+        int count = 2;
+        int i ;
+//        for ( i = 0; i < count; i ++) {
+//            // teacher->_name[i] = @"wahah";
+//            scanf("%s",teacher->_name[i]);
+        [teacher  whatKindOfTeacherDoNotYouLike:teacher->_name[i] size:count];
+            Person1 *p = [[Person1 alloc]init];
+            p->_food = @"meet";
+            [p eat:p->_food];
+        Person1 *pp = [[Person1 alloc]init];
+        [pp introduceSelf];
+        
+        
+      // }
+    }
+     
+    return 0;
+}
+
+
+//
+//  Person.m
+//  Lesson_8_13_类和对象
+//
+//  Created by lanou3g on 15/8/13.
+//  Copyright (c) 2015年 lanou3g. All rights reserved.
+//
+
+#import "Person.h"
+
+@implementation Person
+-(void) eat:(NSString *)food drinksome:(NSString *) shaNe{
+    
+    NSLog(@"我饿了,吃点%@,喝点%@吧",food,shaNe);
+    
+}
+-(void) sleep{
+    
+    NSLog(@"我还困呢");
+    
+}
+-(void) findGirlFriend{
+    
+    NSLog(@"睡醒了去找女盆友吧");
+    
+}
++(void) sayHi{
+    NSLog(@"sayHi");
+}
+@end
+
